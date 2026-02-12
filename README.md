@@ -1,8 +1,8 @@
-#  SnapOCR - Extraction de Texte Locale
+# SnapOCR - Extraction de Texte Locale
 
 Extraire du texte depuis vos images, localement et gratuitement, sans envoyer vos données en ligne.
 
-##  Fonctionnalités
+## Fonctionnalités
 
 ✅ **Extraction OCR locale** avec Tesseract.js  
 ✅ **Zéro upload** - Tout se passe dans votre navigateur  
@@ -16,28 +16,55 @@ Extraire du texte depuis vos images, localement et gratuitement, sans envoyer vo
 ✅ **PWA ready** - Installable comme une app  
 ✅ **100% gratuit** - Aucun compte, aucune limite
 
-##  Démarrage Rapide
+## Démarrage Rapide
 
-### Option 1 : Fichier local (le plus simple)
+### Option 1 : Serveur local (Recommandé)
 
-1. Téléchargez `index.html`
-2. Ouvrez-le dans votre navigateur
-3. C'est tout ! Aucune installation nécessaire
-
-### Option 2 : Serveur local
-
+**Linux/Mac :**
 ```bash
 # Clonez le repo
 git clone https://github.com/votre-username/snapocr.git
 cd snapocr
 
-# Lancez un serveur local
-python3 -m http.server 8000
+# Rendez le script exécutable
+chmod +x start.sh
+
+# Lancez le serveur
+./start.sh
 
 # Ouvrez http://localhost:8000
 ```
 
-## Utilisation
+**Windows :**
+```bash
+# Clonez le repo
+git clone https://github.com/votre-username/snapocr.git
+cd snapocr
+
+# Lancez le serveur
+start.bat
+
+# Ouvrez http://localhost:8000
+```
+
+**Méthode manuelle (tous OS) :**
+```bash
+cd snapocr
+python3 -m http.server 8000
+# Puis ouvrez http://localhost:8000
+```
+
+### Option 2 : Fichier local (peut avoir des limitations)
+
+ **Attention** : Ouvrir `index.html` directement (double-clic) peut causer des erreurs CORS. 
+Utilisez plutôt un serveur local (Option 1).
+
+Si vous voulez quand même essayer :
+1. Téléchargez `index.html`
+2. Double-cliquez dessus
+3. Si vous voyez une erreur CORS, utilisez l'Option 1
+
+##  Utilisation
 
 ### 1. Charger une image
 
@@ -181,7 +208,23 @@ Pour de meilleurs résultats :
 - Redressez les images inclinées
 - Augmentez la résolution si possible
 
-##  Dépannage
+## Dépannage
+
+### Erreur "Permission non accordée" (Linux/Mac)
+```bash
+chmod +x start.sh
+./start.sh
+```
+
+### Erreur CORS "blocked by CORS policy"
+**Cause** : Vous avez ouvert `index.html` directement (file://) au lieu d'utiliser un serveur HTTP.
+
+**Solution** :
+```bash
+# Lancez un serveur local
+python3 -m http.server 8000
+# Puis ouvrez http://localhost:8000 (pas file://...)
+```
 
 ### L'extraction est lente
 - Normal pour de grandes images
@@ -221,7 +264,7 @@ Pour de meilleurs résultats, vous pouvez prétraiter vos images :
 - Redresser les images inclinées
 - Supprimer le bruit (déspeckling)
 
-## 📊 Comparaison avec les Alternatives
+##  Comparaison avec les Alternatives
 
 | Outil | Local | Gratuit | Langues | Limite |
 |-------|-------|---------|---------|--------|
@@ -230,7 +273,7 @@ Pour de meilleurs résultats, vous pouvez prétraiter vos images :
 | Adobe Acrobat | ❌ | ❌ | Limité | Abonnement |
 | Online OCR | ❌ | ⚠️ | Limité | 15 pages/h |
 
-## 🔒 Confidentialité
+##  Confidentialité
 
 **SnapOCR respecte votre vie privée :**
 
@@ -240,7 +283,7 @@ Pour de meilleurs résultats, vous pouvez prétraiter vos images :
 ✅ **Open source** - Code auditable par tous  
 ✅ **Pas de stockage cloud** - Vos images restent chez vous  
 
-## 🤝 Contribution
+##  Contribution
 
 Les contributions sont les bienvenues !
 
@@ -259,20 +302,6 @@ Les contributions sont les bienvenues !
 - Export en formats additionnels (DOCX, PDF)
 - Mode batch (traiter plusieurs images)
 
-## 📝 Licence
-
-MIT License - Libre d'utilisation
-
-## 🙏 Remerciements
-
-- [Tesseract.js](https://tesseract.projectnaptha.com/) - OCR engine
-- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) - Original OCR
-- Communauté open source
-
-## 📧 Contact
-
-Des questions ? Suggestions ? Ouvrez une issue sur GitHub !
-
 ---
 
-**Fait avec ❤️ pour la vie privée et l'open source**
+**Fait pour la vie privée et l'open source**
