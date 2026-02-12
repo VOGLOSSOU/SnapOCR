@@ -23,7 +23,7 @@ Extraire du texte depuis vos images, localement et gratuitement, sans envoyer vo
 **Linux/Mac :**
 ```bash
 # Clonez le repo
-git clone https://github.com/votre-username/snapocr.git
+git clone https://github.com/VOGLOSSOU/SnapOCR
 cd snapocr
 
 # Rendez le script exécutable
@@ -38,7 +38,7 @@ chmod +x start.sh
 **Windows :**
 ```bash
 # Clonez le repo
-git clone https://github.com/votre-username/snapocr.git
+git clone https://github.com/VOGLOSSOU/SnapOCR
 cd snapocr
 
 # Lancez le serveur
